@@ -25,20 +25,20 @@ This repository contains documentation outlining the steps taken to spin up an E
    ```bash
    ssh -i /path/to/private-key.pem ubuntu@your-instance-public-ip
 
-2.Modify SSH Configuration: Edit the SSH server configuration file to enable password authentication.
+2.**Modify SSH Configuration**: Edit the SSH server configuration file to enable password authentication.
 
   sudo nano /etc/ssh/sshd_config
 
   Change PasswordAuthentication no to PasswordAuthentication yes.
 
-3.Restart SSH Service: Restart the SSH service to apply the changes.
+3.**Restart SSH Service**: Restart the SSH service to apply the changes.
 
   sudo systemctl restart sshd
 
-4.Set Password for User: Set a password for the user you want to log in with.
+4.**Set Password for User**: Set a password for the user you want to log in with.
 
   sudo passwd ubuntu
 
-5.Test Connection: Ensure you can now log in using SSH with the username and password.
+5.**Test Connection**: Ensure you can now log in using SSH with the username and password.
 
   ssh ubuntu@your-instance-public-ip
