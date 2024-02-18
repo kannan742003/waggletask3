@@ -23,22 +23,22 @@ This repository contains documentation outlining the steps taken to spin up an E
 
 1. **Connect to the EC2 Instance**: Use an SSH client or terminal to connect to the instance using the private key.
    ```bash
-   ssh -i /path/to/private-key.pem ec2-user@your-instance-public-ip
+   ssh -i /path/to/private-key.pem ubuntu@your-instance-public-ip
 
 2.Modify SSH Configuration: Edit the SSH server configuration file to enable password authentication.
-```bash
-sudo nano /etc/ssh/sshd_config
 
-Change PasswordAuthentication no to PasswordAuthentication yes.
+  sudo nano /etc/ssh/sshd_config
+
+  Change PasswordAuthentication no to PasswordAuthentication yes.
 
 3.Restart SSH Service: Restart the SSH service to apply the changes.
-```bash
-sudo systemctl restart sshd
 
-Set Password for User: Set a password for the user you want to log in with.
+  sudo systemctl restart sshd
 
-sudo passwd ec2-user
+4.Set Password for User: Set a password for the user you want to log in with.
 
-Test Connection: Ensure you can now log in using SSH with the username and password.
+  sudo passwd ubuntu
 
-ssh ec2-user@your-instance-public-ip
+5.Test Connection: Ensure you can now log in using SSH with the username and password.
+
+  ssh ubuntu@your-instance-public-ip
