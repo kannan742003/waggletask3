@@ -25,16 +25,20 @@ This repository contains documentation outlining the steps taken to spin up an E
    ```bash
    ssh -i /path/to/private-key.pem ec2-user@your-instance-public-ip
 
-Modify SSH Configuration: Edit the SSH server configuration file to enable password authentication.
-
+2.Modify SSH Configuration: Edit the SSH server configuration file to enable password authentication.
+```bash
 sudo nano /etc/ssh/sshd_config
+
 Change PasswordAuthentication no to PasswordAuthentication yes.
 
-Restart SSH Service: Restart the SSH service to apply the changes.
+3.Restart SSH Service: Restart the SSH service to apply the changes.
+```bash
 sudo systemctl restart sshd
 
 Set Password for User: Set a password for the user you want to log in with.
+
 sudo passwd ec2-user
 
 Test Connection: Ensure you can now log in using SSH with the username and password.
+
 ssh ec2-user@your-instance-public-ip
